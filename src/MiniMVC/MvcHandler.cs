@@ -22,7 +22,9 @@ namespace MiniMVC
         public void ProcessRequest(HttpContext context)
         {
             string controllerName = this.RequerstContext.RouteData.Controller;
-            
+            IControllerFactory controllerFactory = ControllerBuilder.Current.GetControllerFactory();
+            IController controller = controllerFactory.CreateController(this.RequerstContext, controllerName);
+            controller.Execute(this.RequerstContext);
         }
     }
 }

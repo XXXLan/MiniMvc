@@ -28,7 +28,7 @@ namespace MiniMVC
                 return controllerName.ToString();
             }
         }
-        public string AcionName
+        public string ActionName
         {
             get 
             {

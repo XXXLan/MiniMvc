@@ -12,7 +12,9 @@ namespace MiniMVC
 
         protected void Application_Start(object sender, EventArgs e)
         {
-
+            //其他操作
+            RouteTable.Routes.Add("default", new Route { Url = "{controller}/{action}" });
+            ControllerBuilder.Current.SetControllerFactory(new DefaultControllerFactory());
         }
     }
 }
